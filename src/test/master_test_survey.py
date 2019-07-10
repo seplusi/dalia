@@ -3,6 +3,8 @@ from src.main.common.driver import Driver
 from src.main.pageobjects.welcome_page import WelcomeScreen
 from src.main.pageobjects.hours_read_per_day import HoursReadPerDay
 from src.main.pageobjects.social_media import SocialMediaScreen
+from src.main.pageobjects.just_media import JustMediaScreen
+from src.main.pageobjects.prominent_person import ProminentPerson
 
 
 class eurosportMotorsport(unittest.TestCase):
@@ -28,7 +30,16 @@ class eurosportMotorsport(unittest.TestCase):
         self.social_media = SocialMediaScreen(self.driver)
         self.social_media.cannot_go_next_unless_answered()
         self.social_media.click_several_boxs([1, 2, 3])
+        self.social_media.click_next()
 
+        self.just_media = JustMediaScreen(self.driver)
+        self.just_media.cannot_go_next_unless_answered()
+        self.just_media.click_several_boxs([2, 3])
+        self.just_media.click_next()
+
+        self.person = ProminentPerson(self.driver)
+        self.person.cannot_go_next_unless_answered()
+        self.person.insert_name_and_clock_next('Hover')
         print('Hello World')
  #       self.homepage.click_motorsports()
  #       MotorsportScreen(self.driver)

@@ -1,7 +1,4 @@
-from src.main.common.common_object import Common
-
-
-class WelcomeScreen(Common):
+class WelcomeScreen():
 
     def __init__(self, driver):
         self.driver = driver.instance
