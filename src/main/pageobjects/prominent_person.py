@@ -1,6 +1,5 @@
 import time
 from selenium.common.exceptions import StaleElementReferenceException
-from selenium.webdriver.common.keys import Keys
 
 
 class ProminentPerson:

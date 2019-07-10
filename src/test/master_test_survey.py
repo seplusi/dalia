@@ -5,6 +5,11 @@ from src.main.pageobjects.hours_read_per_day import HoursReadPerDay
 from src.main.pageobjects.social_media import SocialMediaScreen
 from src.main.pageobjects.just_media import JustMediaScreen
 from src.main.pageobjects.prominent_person import ProminentPerson
+from src.main.pageobjects.trust_information import TrustInformation
+from src.main.pageobjects.five_plus_two import FivePlusTwo
+from src.main.pageobjects.where_live import WhereILive
+from src.main.pageobjects.favourite_film import FavouriteFilm
+from src.main.pageobjects.preferfence_about_movie import PreferenceAboutMovie
 
 
 class eurosportMotorsport(unittest.TestCase):
@@ -40,10 +45,29 @@ class eurosportMotorsport(unittest.TestCase):
         self.person = ProminentPerson(self.driver)
         self.person.cannot_go_next_unless_answered()
         self.person.insert_name_and_clock_next('Hover')
-        print('Hello World')
- #       self.homepage.click_motorsports()
- #       MotorsportScreen(self.driver)
-        pass
+
+        self.trust_info = TrustInformation(self.driver)
+        self.trust_info.cannot_go_next_unless_answered()
+        self.trust_info.click_one_box(1)
+
+        self.five_plus_two = FivePlusTwo(self.driver)
+        self.five_plus_two.cannot_go_next_unless_answered()
+        self.five_plus_two.insert_name_and_clock_next(7)
+
+        self.where_live = WhereILive(self.driver)
+        self.where_live.cannot_go_next_unless_answered()
+        self.where_live.click_city_option()
+        self.where_live.click_next()
+
+        self.favourite_film = FavouriteFilm(self.driver)
+        self.favourite_film.cannot_go_next_unless_answered()
+        self.favourite_film.click_option('Gandhi')
+        self.favourite_film.click_next()
+
+        self.preference = PreferenceAboutMovie(self.driver, 'Gandhi')
+        self.preference.cannot_go_next_unless_answered()
+        self.preference.click_option('Editing')
+        self.preference.click_next()
 
     def tearDown(self):
         pass
