@@ -4,6 +4,10 @@
 # It's placed in src/test
 #
 # Set the chromedriver path in the master_test_survey.py
+#
+# using selenium==3.141.0
+# using ChromeDriver 75.0.3770.90
+# using geckodriver 0.24.0 ( 2019-01-28)
 
 1) Pull the master branch
 
