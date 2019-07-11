@@ -11,13 +11,14 @@ from src.main.pageobjects.where_live import WhereILive
 from src.main.pageobjects.favourite_film import FavouriteFilm
 from src.main.pageobjects.preferfence_about_movie import PreferenceAboutMovie
 
+chromedriver_path = '/home/luis/Programs/chromedriver/chromedriver'
 
-class eurosportMotorsport(unittest.TestCase):
+class DaliaSurvey(unittest.TestCase):
     """A sample test class to show how page object works"""
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = Driver()
+        cls.driver = Driver(chromedriver_path)
 
     def setUp(self):
         self.driver.navigate("https://surveyinterface-v2.opinionsample.com/#/surveys/ab320070-bbad-0134-bb62-0a6b3886cf3d/init?publisher_user_id=07bfe320-86d2-0131-c9aa-0a424708edaa&panel_user_id=PANEL_USER_TEST_c75236c0-bbad-0134-bbe2-0a6b3886cf3d&panel_user_id_kind=PANEL_USER_KIND_TEST&pparam_offer_click_id=OFFER_CLICK_TEST_c75236c0-bbad-0134-bbe2-0a6b3886cf3d&is_test=true")
