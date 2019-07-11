@@ -23,8 +23,8 @@ class eurosportMotorsport(unittest.TestCase):
         self.driver.navigate("https://surveyinterface-v2.opinionsample.com/#/surveys/ab320070-bbad-0134-bb62-0a6b3886cf3d/init?publisher_user_id=07bfe320-86d2-0131-c9aa-0a424708edaa&panel_user_id=PANEL_USER_TEST_c75236c0-bbad-0134-bbe2-0a6b3886cf3d&panel_user_id_kind=PANEL_USER_KIND_TEST&pparam_offer_click_id=OFFER_CLICK_TEST_c75236c0-bbad-0134-bbe2-0a6b3886cf3d&is_test=true")
         self.welcome_screen = WelcomeScreen(self.driver)
 
-#    @unittest.skip('')
     def test_fullsurvey_happy_path(self):
+        self.welcome_screen.cannot_go_next_unless_answered_without_err_message()
         self.welcome_screen.accept_test_box()
         self.welcome_screen.click_next()
 
@@ -44,28 +44,28 @@ class eurosportMotorsport(unittest.TestCase):
 
         self.person = ProminentPerson(self.driver)
         self.person.cannot_go_next_unless_answered()
-        self.person.insert_name_and_clock_next('Hover')
+        self.person.insert_name_and_click_next('J. Edgar Hover')
 
         self.trust_info = TrustInformation(self.driver)
-        self.trust_info.cannot_go_next_unless_answered()
+        self.trust_info.cannot_go_next_unless_answered_without_err_message()
         self.trust_info.click_one_box(1)
 
         self.five_plus_two = FivePlusTwo(self.driver)
-        self.five_plus_two.cannot_go_next_unless_answered()
+        self.five_plus_two.cannot_go_next_unless_answered_without_err_message()
         self.five_plus_two.insert_name_and_clock_next(7)
 
         self.where_live = WhereILive(self.driver)
-        self.where_live.cannot_go_next_unless_answered()
+        self.where_live.cannot_go_next_unless_answered_without_err_message()
         self.where_live.click_city_option()
         self.where_live.click_next()
 
         self.favourite_film = FavouriteFilm(self.driver)
-        self.favourite_film.cannot_go_next_unless_answered()
+        self.favourite_film.cannot_go_next_unless_answered_without_err_message()
         self.favourite_film.click_option('Gandhi')
         self.favourite_film.click_next()
 
         self.preference = PreferenceAboutMovie(self.driver, 'Gandhi')
-        self.preference.cannot_go_next_unless_answered()
+        self.preference.cannot_go_next_unless_answered_without_err_message()
         self.preference.click_option('Editing')
         self.preference.click_next()
 

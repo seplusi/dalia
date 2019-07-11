@@ -22,3 +22,11 @@ class Common:
         else:
             print('Couldn\'t find heading %s' % heading_str)
             assert False
+
+    def cannot_go_next_unless_answered_without_err_message(self):
+        self.next_button.click()
+        time.sleep(2)
+        self.validate_heading(self.heading_str, self.heading_selector)
+
+    def click_next(self):
+        self.next_button.click()

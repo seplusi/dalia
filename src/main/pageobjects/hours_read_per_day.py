@@ -1,8 +1,11 @@
-class HoursReadPerDay:
+from src.main.common.page_common_object import Common
+
+
+class HoursReadPerDay(Common):
 
     def __init__(self, driver):
         self.driver = driver.instance
-
+        self.validate_heading('How many hours per day do you spend on reading the news?', 'h1 > p > b')
         self.dont_read_news_box = self.driver.find_element_by_css_selector('label[for="answer_2_O0010"]')
         self.one_2_three_box = self.driver.find_element_by_css_selector('label[for="answer_2_O0020"]')
         self.four_2_five_box = self.driver.find_element_by_css_selector('label[for="answer_2_O0030"]')
@@ -19,6 +22,3 @@ class HoursReadPerDay:
         self.options[option].click()
         self.driver.find_element_by_css_selector('input[id="%s"]:not([class*="ng-pristine"])' % option)
         self.click_next()
-
-    def click_next(self):
-        self.next_button.click()
