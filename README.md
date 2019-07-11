@@ -1,12 +1,14 @@
 # dalia
 #
 # The ui test script is: master_test_survey.py
-# It's placed in src/main/test
+# It's placed in src/test
+#
+# Set the chromedriver path in the master_test_survey.py
 
 1) Pull the master branch
 
 # Go to project base directory
-2) cd ~/git/dalia
+2) cd ~/dalia
 
 # Set python path env variable
 3) PYTHONPATH=`pwd`
