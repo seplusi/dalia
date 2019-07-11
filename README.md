@@ -15,7 +15,7 @@
 2) cd ~/dalia
 
 # Set python path env variable
-3) PYTHONPATH=`pwd`
+3) PYTHONPATH='pwd'
 4) export PYTHONPATH
 
 # Go to test scritp folder and run it
